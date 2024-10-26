@@ -5,6 +5,8 @@ if(NOT DEFINED HIGHFIVE_FIND_HDF5)
 endif()
 
 message(STATUS "Looking for HDF5")
+message(STATUS "HDF5 Libraries: ${HDF5_LIBRARIES}")
+message(STATUS "HDF5 Include Dirs: ${HDF5_INCLUDE_DIRS}")
 
 if(HIGHFIVE_FIND_HDF5)
   find_package(HDF5 HINTS "/home/tartarughina/hdf5/build/HDF5-1.17.0-Linux/HDF_Group/HDF5/1.17.0/cmake")
