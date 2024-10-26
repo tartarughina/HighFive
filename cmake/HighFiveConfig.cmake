@@ -5,7 +5,7 @@ if(NOT DEFINED HIGHFIVE_FIND_HDF5)
 endif()
 
 if(HIGHFIVE_FIND_HDF5)
-  find_dependency(HDF5)
+  find_dependency(HDF5 HINTS "/home/tartarughina/hdf5/build/HDF5-1.17.0-Linux/HDF_Group/HDF5/1.17.0/cmake")
 endif()
 
 include("${CMAKE_CURRENT_LIST_DIR}/HighFiveTargets.cmake")
