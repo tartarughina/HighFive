@@ -109,7 +109,7 @@ add_library(HighFive::HighFive ALIAS HighFive)
 target_link_libraries(HighFive INTERFACE HighFive::Include)
 
 if(HIGHFIVE_FIND_HDF5)
-  find_package(HDF5 REQUIRED)
+  find_package(HDF5 REQUIRED HINTS "/home/tartarughina/hdf5/build/HDF5-1.17.0-Linux/HDF_Group/HDF5/1.17.0/cmake")
   target_link_libraries(HighFive INTERFACE HDF5::HDF5)
 endif()
 
