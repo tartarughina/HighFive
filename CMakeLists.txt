@@ -110,6 +110,14 @@ target_link_libraries(HighFive INTERFACE HighFive::Include)
 
 if(HIGHFIVE_FIND_HDF5)
   find_package(HDF5 REQUIRED HINTS "/home/tartarughina/hdf5/build/HDF5-1.17.0-Linux/HDF_Group/HDF5/1.17.0/cmake")
+  if(NOT TARGET HDF5::HDF5)
+    # Define the target manually if not available
+    add_library(HDF5::HDF5 UNKNOWN IMPORTED)
+    set_target_properties(HDF5::HDF5 PROPERTIES
+      IMPORTED_LOCATION "${HDF5_LIBRARIES}"
+      INTERFACE_INCLUDE_DIRECTORIES "${HDF5_INCLUDE_DIRS}"
+    )
+  endif()
   target_link_libraries(HighFive INTERFACE HDF5::HDF5)
 endif()
 
